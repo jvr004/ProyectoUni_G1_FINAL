@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Uni.g1.Modelo;
 
 public class Materia {
@@ -62,7 +58,7 @@ private boolean estado;
 
     @Override
     public String toString() {
-        return "Materia{" + "nombre=" + nombre + ", año=" + año + '}';
+        return nombre + "\n" + "De " + año + " año.";
     }
 
 

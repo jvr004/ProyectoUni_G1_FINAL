@@ -42,7 +42,7 @@ public class AlumnoData {
         }
     }
     
-    public List<Alumno> obtenerAlumnos(){
+    public ArrayList<Alumno> obtenerAlumnos(){
         
         ArrayList<Alumno> listaTemp=new ArrayList();
         
@@ -56,7 +56,7 @@ public class AlumnoData {
             while(rs.next()){
             
                 Alumno a=new Alumno();
-                a.setIdAlumno(rs.getInt("idAlumno"));
+                
                 a.setIdAlumno(rs.getInt("idAlumno"));
                 a.setDni(rs.getInt("dni"));
                 a.setApellido(rs.getString("apellido"));
@@ -84,7 +84,7 @@ public class AlumnoData {
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             
-            while(rs.next()){              
+            if(rs.next()){              
                 alu.setIdAlumno(id);
                 alu.setDni(rs.getInt("dni"));
                 alu.setApellido(rs.getString("apellido"));
@@ -109,8 +109,7 @@ public class AlumnoData {
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setInt(1, id);
-            ResultSet rs=ps.executeQuery();
-            ps.executeUpdate();
+            ps.executeUpdate();//
             
             JOptionPane.showMessageDialog(null, "Se elimino el alumno correctamente");
             
@@ -124,7 +123,7 @@ public class AlumnoData {
     
     
     public void actualizaAlumno(Alumno alumno){
-        String sql="UPDATE alumnos SET dni=?, apellido = ?, nombre = ?, fechaNacimiento = ?, estado=0 WHERE idAlumno=?";
+        String sql="UPDATE alumnos SET dni=?, apellido = ?, nombre = ?, fechaNacimiento = ?, estado=? WHERE idAlumno=?";
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setInt(1, alumno.getDni());
