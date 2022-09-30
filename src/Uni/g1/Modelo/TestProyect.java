@@ -6,8 +6,10 @@ import java.time.Month;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import Uni.g1.Controladora.AlumnoData;
+import Uni.g1.Controladora.CursadaData;
 import Uni.g1.Controladora.MateriaData;
 import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -17,9 +19,35 @@ public class TestProyect {
         
         
         AlumnoData ad =new AlumnoData();
+        Alumno alu=new Alumno(14,123,"Tor","Tor",LocalDate.of(1987, 04, 12),true);
         MateriaData md=new MateriaData();
         
-        Materia mat = new Materia(5,"rrrrr 1",2,true);
+        Materia mat = new Materia(1,"frances",1,true);
+        
+        CursadaData cd=new CursadaData();
+        
+        Cursada cursada=new Cursada(alu,mat,0);
+                
+        //cd.guardarCursada(cursada);
+        
+        //cd.actualizarNota(14, 6, 4.5);
+        
+        //cd.borrarCursada(14, 1);
+        
+        List<Materia> lista=new ArrayList();
+        
+       lista=cd.materiasInscripto(1);
+       
+       for(Materia m:lista){
+        JOptionPane.showMessageDialog(null, m);
+       } 
+        
+       
+        
+        
+        
+        
+        
         
 //       ArrayList<Materia> lista=new ArrayList();
 //       

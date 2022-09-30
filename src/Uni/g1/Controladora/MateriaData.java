@@ -55,7 +55,7 @@ public class MateriaData {
                 Materia m=new Materia();
                 
                 m.setIdMateria(rs.getInt("idMateria"));
-                m.setNombre(rs.getString("nombreMAteria"));
+                m.setNombre(rs.getString("nombreMateria"));
                 m.setAño(rs.getInt("año"));
                 m.setEstado(rs.getBoolean("estado"));
                 

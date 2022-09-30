@@ -5,22 +5,22 @@
  */
 package Uni.g1.Modelo;
 
-public class cursada {
+public class Cursada {
    
     private Alumno alumno;
     private Materia materia;
     private double nota;
 
-    public cursada() {
+    public Cursada() {
     }
 
-    public cursada(Alumno alumno, Materia materia, double nota) {
+    public Cursada(Alumno alumno, Materia materia, double nota) {
         this.alumno = alumno;
         this.materia = materia;
         this.nota = nota;
     }
 
-    public cursada(double nota) {
+    public Cursada(double nota) {
         this.nota = nota;
     }
 
