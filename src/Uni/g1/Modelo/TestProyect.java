@@ -27,42 +27,46 @@ public class TestProyect {
         CursadaData cd=new CursadaData();
         
         Cursada cursada=new Cursada(alu,mat,0);
+        
+        Cursada cur= cd.obtenerCursada(1, 2);
+        
+        JOptionPane.showMessageDialog(null,cur);        
                 
         //cd.guardarCursada(cursada);
         
-        //cd.actualizarNota(14, 6, 4.5);
+        cd.actualizarNota(33,cur.getMateria().getIdMateria(), 10);
         
         //cd.borrarCursada(14, 1);
         
         
-        List<Materia> lista=new ArrayList();
-        
-       lista=cd.materiasInscripto(3);
-       
-       for(Materia m:lista){
-        JOptionPane.showMessageDialog(null, m);
-       } 
-        
-       
-       List<Materia> noInscriptas=new ArrayList<>();
-       
-       noInscriptas=cd.materiasNoInscriptas(3);
-       
-       for (Materia m:noInscriptas){
-           JOptionPane.showMessageDialog(null, m);
-       }
-       
-               
-       List<Alumno> Inscriptos=new ArrayList<>();
-       
-       Inscriptos=cd.alumnosInscriptos(2);
-       
-       for (Alumno a:Inscriptos){
-           JOptionPane.showMessageDialog(null, a);
-       }
-        
-        
-        
+//        List<Materia> lista=new ArrayList();
+//        
+//       lista=cd.materiasInscripto(3);
+//       
+//       for(Materia m:lista){
+//        JOptionPane.showMessageDialog(null, m);
+//       } 
+//        
+//       
+//       List<Materia> noInscriptas=new ArrayList<>();
+//       
+//       noInscriptas=cd.materiasNoInscriptas(3);
+//       
+//       for (Materia m:noInscriptas){
+//           JOptionPane.showMessageDialog(null, m);
+//       }
+//       
+//               
+//       List<Alumno> Inscriptos=new ArrayList<>();
+//       
+//       Inscriptos=cd.alumnosInscriptos(2);
+//       
+//       for (Alumno a:Inscriptos){
+//           JOptionPane.showMessageDialog(null, a);
+//       }
+//        
+//        
+//        
         
 //       ArrayList<Materia> lista=new ArrayList();
 //       

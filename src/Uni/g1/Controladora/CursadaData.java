@@ -50,13 +50,18 @@ public class CursadaData {
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             
+            ps.setDouble(1,nota);
             ps.setInt(2,idAlumno);
             ps.setInt(3,idMateria);
-            ps.setDouble(1,nota);
             
-            ps.executeUpdate();            
             
+            int filas = ps.executeUpdate();
+            
+            if(filas>0){
             JOptionPane.showMessageDialog(null, "Actualizacion exitosa.");
+            } else{
+                JOptionPane.showMessageDialog(null, "No se pudo actualizar.");
+            }
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al Modificar la nota."); 
@@ -176,4 +181,53 @@ public class CursadaData {
         
        return alu; 
     }
-}
+    
+    public Cursada obtenerCursada(int idAlumno, int idMateria){
+         String sql="SELECT a.idAlumno, a.apellido, a.nombre, a.dni, m.idMateria, m.nombreMateria, m.año, c.nota FROM alumnos a, cursada c, materia m WHERE a.idAlumno = c.idAlumno and m.idMateria = c.idMateria AND c.idMateria = ? AND c.idAlumno = ?;";
+         
+        Cursada cd= new Cursada();
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            
+            ps.setInt(1, idAlumno);
+            ps.setInt(2, idMateria);
+            
+            ResultSet rs=ps.executeQuery();
+            
+            Alumno a=new Alumno();
+            Materia m=new Materia();
+            
+            
+            if(rs.next()){
+                                
+                a.setIdAlumno(rs.getInt("idAlumno"));
+                a.setApellido(rs.getString("apellido"));
+                a.setNombre(rs.getString("nombre"));
+                a.setDni(rs.getInt("dni"));
+                
+                m.setIdMateria(rs.getInt("idMateria"));
+                m.setNombre(rs.getString("nombreMateria"));
+                m.setAño(rs.getInt("año"));
+                
+                
+                cd.setAlumno(a);
+                cd.setMateria(m);
+                cd.setNota(rs.getInt("nota"));
+                
+                
+            }
+            
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al Obtener la cursda de Alumno y Materia."); 
+        }
+        return cd;
+        
+    }
+        
+    }
+    
+    //obtenerCursada-devulve todas
+    //obtenerCursada devuelve por id
+            

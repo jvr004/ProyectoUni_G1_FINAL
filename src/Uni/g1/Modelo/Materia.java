@@ -58,7 +58,7 @@ private boolean estado;
 
     @Override
     public String toString() {
-        return nombre + "\n" + "De " + año + " año.";
+        return "\n" + nombre + "\n" + "De " + año + " año.";
     }
 
 
