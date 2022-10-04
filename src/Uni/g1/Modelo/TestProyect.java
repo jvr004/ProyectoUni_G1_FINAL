@@ -34,17 +34,32 @@ public class TestProyect {
         
         //cd.borrarCursada(14, 1);
         
+        
         List<Materia> lista=new ArrayList();
         
-       lista=cd.materiasInscripto(1);
+       lista=cd.materiasInscripto(3);
        
        for(Materia m:lista){
         JOptionPane.showMessageDialog(null, m);
        } 
         
        
-        
-        
+       List<Materia> noInscriptas=new ArrayList<>();
+       
+       noInscriptas=cd.materiasNoInscriptas(3);
+       
+       for (Materia m:noInscriptas){
+           JOptionPane.showMessageDialog(null, m);
+       }
+       
+               
+       List<Alumno> Inscriptos=new ArrayList<>();
+       
+       Inscriptos=cd.alumnosInscriptos(2);
+       
+       for (Alumno a:Inscriptos){
+           JOptionPane.showMessageDialog(null, a);
+       }
         
         
         

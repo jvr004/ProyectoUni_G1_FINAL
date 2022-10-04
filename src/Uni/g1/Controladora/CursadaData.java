@@ -121,5 +121,59 @@ public class CursadaData {
         
     }
     
+    public List<Materia> materiasNoInscriptas(int idAlumno) {
+        ArrayList<Materia> mat = new ArrayList<>();
+        
+        String sql= "SELECT * FROM materia WHERE idMateria NOT IN (SELECT idMateria FROM cursada WHERE  idAlumno = ?)";
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1, idAlumno);
+            ResultSet rs= ps.executeQuery();
+            Materia m;
+            while (rs.next()) {
+                m = new Materia();
+                m.setIdMateria(rs.getInt("idMateria"));
+                m.setNombre(rs.getString("nombreMateria"));
+                m.setAño(rs.getInt("año"));
+                m.setEstado(rs.getBoolean("estado"));
+                mat.add(m);
+            }
+            ps.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+        return mat;
+    }
     
+    public List<Alumno> alumnosInscriptos(int idMateria) {
+        ArrayList<Alumno> alu=new ArrayList<>();
+        
+        String sql="SELECT a.idAlumno, a.dni, a.apellido, a.nombre, a.fechaNacimiento, a.estado FROM alumnos a, cursada c, materia m WHERE a.idAlumno = c.idAlumno and m.idMateria = c.idMateria AND c.idMateria = ?";
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1, idMateria);
+            ResultSet rs=ps.executeQuery();
+            Alumno a;
+            while(rs.next()){
+                a=new Alumno();
+                a.setIdAlumno(rs.getInt("idAlumno"));
+                a.setDni(rs.getInt("dni"));
+                a.setApellido(rs.getString("apellido"));
+                a.setNombre(rs.getString("nombre"));
+                a.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+                a.setEstado(rs.getBoolean("estado"));
+                alu.add(a);
+        
+            }
+            ps.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No hay alumnos Inscriptos");
+        }
+        
+       return alu; 
+    }
 }

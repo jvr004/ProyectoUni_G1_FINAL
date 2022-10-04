@@ -76,16 +76,16 @@ public class AlumnoData {
     }
     
     
-    public Alumno obtenerAlumnoPorId(int id) {
+    public Alumno obtenerAlumnoPorId(int idAlumno) {
         String sql= "SELECT * FROM alumnos WHERE idAlumno = ?";
         Alumno alu = new Alumno();
         try {
             PreparedStatement ps=con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, idAlumno);
             ResultSet rs=ps.executeQuery();
             
             if(rs.next()){              
-                alu.setIdAlumno(id);
+                alu.setIdAlumno(idAlumno);
                 alu.setDni(rs.getInt("dni"));
                 alu.setApellido(rs.getString("apellido"));
                 alu.setNombre(rs.getString("nombre"));
