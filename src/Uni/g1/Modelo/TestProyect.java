@@ -28,13 +28,21 @@ public class TestProyect {
         
         Cursada cursada=new Cursada(alu,mat,0);
         
-        Cursada cur= cd.obtenerCursada(1, 2);
         
-        JOptionPane.showMessageDialog(null,cur);        
-                
+        cd.obtenerCursadas();
+        JOptionPane.showMessageDialog(null, cd.obtenerCursadas());
+        
+        
+//        Cursada cur= cd.obtenerCursadaPorId(1, 2);
+//       
+//        JOptionPane.showMessageDialog(null,cur);        
+//                
         //cd.guardarCursada(cursada);
         
-        cd.actualizarNota(33,cur.getMateria().getIdMateria(), 10);
+//        cd.actualizarNota(33,cur.getMateria().getIdMateria(), 10);
+        
+        
+        
         
         //cd.borrarCursada(14, 1);
         

@@ -15,9 +15,13 @@ import javax.swing.JOptionPane;
 
 public class CursadaData {
     private Connection con;
+    private AlumnoData alumData;
+    private MateriaData materiaData;
     
     public CursadaData() {
         this.con=Conexion.getConexion();
+        this.alumData= new AlumnoData();
+        this.materiaData= new MateriaData();
     }
     
     public void guardarCursada(Cursada cursada){
@@ -182,7 +186,7 @@ public class CursadaData {
        return alu; 
     }
     
-    public Cursada obtenerCursada(int idAlumno, int idMateria){
+    public Cursada obtenerCursadaPorId(int idAlumno, int idMateria){
          String sql="SELECT a.idAlumno, a.apellido, a.nombre, a.dni, m.idMateria, m.nombreMateria, m.año, c.nota FROM alumnos a, cursada c, materia m WHERE a.idAlumno = c.idAlumno and m.idMateria = c.idMateria AND c.idMateria = ? AND c.idAlumno = ?;";
          
         Cursada cd= new Cursada();
@@ -225,9 +229,46 @@ public class CursadaData {
         return cd;
         
     }
+    
+     public ArrayList<Cursada> obtenerCursadas(){
+        
+        ArrayList<Cursada> lCursada=new ArrayList();
+        
+        String sql="SELECT * FROM cursada";
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            
+            ResultSet rs=ps.executeQuery();//select
+            
+                Cursada cur;      
+                 
+            while(rs.next()){
+                
+                cur = new Cursada();
+                
+                Alumno alu= alumData.obtenerAlumnoPorId(rs.getInt("idAlumno"));
+                cur.setAlumno(alu);
+                
+                Materia mat= materiaData.obtenerMateriaPorId(rs.getInt("idMateria"));
+                cur.setMateria(mat);
+                
+                cur.setNota(rs.getDouble("nota"));
+                
+                lCursada.add(cur);
+                
+            }
+            
+            ps.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "CursadaData Sentencia SQL erronea-ObtenerCursadas");
+        }
+    return lCursada;
+    }
+    
+    
+    
         
     }
     
-    //obtenerCursada-devulve todas
-    //obtenerCursada devuelve por id
-            
