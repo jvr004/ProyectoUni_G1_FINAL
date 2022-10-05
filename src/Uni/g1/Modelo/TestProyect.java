@@ -28,7 +28,7 @@ public class TestProyect {
         
         Cursada cursada=new Cursada(alu,mat,0);
         
-        
+         
         cd.obtenerCursadas();
         JOptionPane.showMessageDialog(null, cd.obtenerCursadas());
         

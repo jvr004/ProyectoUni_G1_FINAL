@@ -71,17 +71,17 @@ public class MateriaData {
     }
     
     
-    public Materia obtenerMateriaPorId(int id) {
+    public Materia obtenerMateriaPorId(int idMateria) {
         String sql= "SELECT * FROM materia WHERE idMateria = ?";
         Materia mat = new Materia();
         try {
             PreparedStatement ps=con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, idMateria);
             ResultSet rs=ps.executeQuery();
             
             if(rs.next()){              
-                mat.setIdMateria(id);
-                mat.setNombre(rs.getString("nombre"));
+                mat.setIdMateria(idMateria);
+                mat.setNombre(rs.getString("nombreMateria"));
                 mat.setAño(rs.getInt("año"));
                 mat.setEstado(rs.getBoolean("estado"));
                 

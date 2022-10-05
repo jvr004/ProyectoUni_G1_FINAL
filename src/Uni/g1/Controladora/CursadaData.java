@@ -232,7 +232,7 @@ public class CursadaData {
     
      public ArrayList<Cursada> obtenerCursadas(){
         
-        ArrayList<Cursada> lCursada=new ArrayList();
+        ArrayList<Cursada> cur=new ArrayList();
         
         String sql="SELECT * FROM cursada";
         
@@ -241,21 +241,21 @@ public class CursadaData {
             
             ResultSet rs=ps.executeQuery();//select
             
-                Cursada cur;      
+                Cursada c;      
                  
             while(rs.next()){
                 
-                cur = new Cursada();
+                c = new Cursada();
                 
-                Alumno alu= alumData.obtenerAlumnoPorId(rs.getInt("idAlumno"));
-                cur.setAlumno(alu);
+                Alumno a= alumData.obtenerAlumnoPorId(rs.getInt("idAlumno"));
+                c.setAlumno(a);
                 
-                Materia mat= materiaData.obtenerMateriaPorId(rs.getInt("idMateria"));
-                cur.setMateria(mat);
+                Materia m= materiaData.obtenerMateriaPorId(rs.getInt("idMateria"));
+                c.setMateria(m);
                 
-                cur.setNota(rs.getDouble("nota"));
+                c.setNota(rs.getDouble("nota"));
                 
-                lCursada.add(cur);
+                cur.add(c);
                 
             }
             
@@ -264,7 +264,7 @@ public class CursadaData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "CursadaData Sentencia SQL erronea-ObtenerCursadas");
         }
-    return lCursada;
+    return cur;
     }
     
     
