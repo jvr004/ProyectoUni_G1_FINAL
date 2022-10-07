@@ -1,4 +1,4 @@
-package Uni.g1.Controladora;
+package ClasesControladoras;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import Uni.g1.Modelo.Conexion;
-import Uni.g1.Modelo.Alumno;
+import ClasesModelo.Conexion;
+import ClasesModelo.Alumno;
 
 
 public class AlumnoData {

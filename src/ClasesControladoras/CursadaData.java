@@ -1,7 +1,10 @@
 
-package Uni.g1.Controladora;
+package ClasesControladoras;
 
-import Uni.g1.Modelo.*;
+import ClasesModelo.Alumno;
+import ClasesModelo.Cursada;
+import ClasesModelo.Materia;
+import ClasesModelo.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -230,45 +233,41 @@ public class CursadaData {
         
     }
     
-     public ArrayList<Cursada> obtenerCursadas(){
+    public ArrayList<Cursada> obtenerCursadas(){
         
-        ArrayList<Cursada> cur=new ArrayList();
+    ArrayList<Cursada> cur=new ArrayList();
+
+    String sql="SELECT * FROM cursada";
+
+    try {
         
-        String sql="SELECT * FROM cursada";
-        
-        try {
-            PreparedStatement ps=con.prepareStatement(sql);
-            
-            ResultSet rs=ps.executeQuery();//select
-            
-                Cursada c;      
-                 
-            while(rs.next()){
-                
-                c = new Cursada();
-                
-                Alumno a= alumData.obtenerAlumnoPorId(rs.getInt("idAlumno"));
-                c.setAlumno(a);
-                
-                Materia m= materiaData.obtenerMateriaPorId(rs.getInt("idMateria"));
-                c.setMateria(m);
-                
-                c.setNota(rs.getDouble("nota"));
-                
-                cur.add(c);
-                
+    PreparedStatement ps=con.prepareStatement(sql);
+
+    ResultSet rs=ps.executeQuery();//select
+
+        Cursada c;      
+
+    while(rs.next()){
+
+        c = new Cursada();
+
+        Alumno a= alumData.obtenerAlumnoPorId(rs.getInt("idAlumno"));
+        c.setAlumno(a);
+
+        Materia m= materiaData.obtenerMateriaPorId(rs.getInt("idMateria"));
+        c.setMateria(m);
+
+        c.setNota(rs.getDouble("nota"));
+
+        cur.add(c);
+
             }
-            
             ps.close();
-            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "CursadaData Sentencia SQL erronea-ObtenerCursadas");
         }
-    return cur;
-    }
-    
-    
-    
-        
-    }
+        return cur;
+        }
+
+}
     

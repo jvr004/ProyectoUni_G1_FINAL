@@ -1,5 +1,5 @@
 
-package Uni.g1.Modelo;
+package ClasesModelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,6 +25,7 @@ public class Conexion {
     }
 
     public static Connection getConexion() {
+        
         Connection conn=null;
         
         if (conexion == null) {
