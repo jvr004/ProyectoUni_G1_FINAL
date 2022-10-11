@@ -1,5 +1,5 @@
 
-package Uni.g1.Modelo;
+package ClasesModelo;
 
 public class Materia {
 
@@ -58,7 +58,7 @@ private boolean estado;
 
     @Override
     public String toString() {
-        return nombre + " " + "De " + año + " ";
+        return nombre + " " + "De " + año + " " + "año.";
     }
 
 

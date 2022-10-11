@@ -1,10 +1,10 @@
-package Uni.g1.Controladora;
+package ClasesControladoras;
 
 import java.sql.*;
 import java.util.*;
 import javax.swing.JOptionPane;
-import Uni.g1.Modelo.Conexion;
-import Uni.g1.Modelo.Materia;
+import ClasesModelo.Conexion;
+import ClasesModelo.Materia;
 
 
 public class MateriaData {

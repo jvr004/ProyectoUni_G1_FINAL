@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Uni.g1.Modelo;
+package ClasesModelo;
 
 public class Cursada {
    
@@ -51,7 +51,7 @@ public class Cursada {
 
     @Override
     public String toString() {
-        return "Alumno: " + alumno +  "Materia: " + materia.getNombre() + " Nota: " + nota +"\n ";
+        return "Alumno: " + alumno + "Materia: " + materia.getNombre() + " Nota: " + nota + "\n ";
     }
     
     

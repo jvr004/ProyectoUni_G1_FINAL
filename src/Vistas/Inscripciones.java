@@ -3,14 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Uni.g1.Vistas;
+package Vistas;
 
-import Uni.g1.Controladora.AlumnoData;
-import Uni.g1.Controladora.CursadaData;
-import Uni.g1.Controladora.MateriaData;
-import Uni.g1.Modelo.Alumno;
-import Uni.g1.Modelo.Cursada;
-import Uni.g1.Modelo.Materia;
+import ClasesControladoras.*;
+import ClasesModelo.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;

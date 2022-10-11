@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Uni.g1.Vistas;
+package Vistas;
 
-import Uni.g1.Controladora.AlumnoData;
-import Uni.g1.Modelo.Alumno;
-import Uni.g1.Modelo.Conexion;
+import ClasesControladoras.AlumnoData;
+import ClasesModelo.Alumno;
+import ClasesModelo.Conexion;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
