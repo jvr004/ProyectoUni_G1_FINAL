@@ -75,7 +75,7 @@ public class Alumnos extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel2.setText("LEGAJO:");
+        jLabel2.setText("LEGAJO");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 153, 153));
