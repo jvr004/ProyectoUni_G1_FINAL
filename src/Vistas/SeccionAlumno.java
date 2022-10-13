@@ -82,6 +82,11 @@ public class SeccionAlumno extends javax.swing.JFrame {
         jmiFormMaterias.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         jmiFormMaterias.setForeground(new java.awt.Color(0, 153, 153));
         jmiFormMaterias.setText("Formulario de Materias");
+        jmiFormMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiFormMateriasActionPerformed(evt);
+            }
+        });
         jmMaterias.add(jmiFormMaterias);
 
         jMenuBar1.add(jmMaterias);
@@ -187,6 +192,15 @@ public class SeccionAlumno extends javax.swing.JFrame {
         escritorio.add(i);
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiManInscripcionesActionPerformed
+
+    private void jmiFormMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFormMateriasActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        Materias mat = new Materias();
+        mat.setVisible(true);
+        escritorio.add(mat);
+    }//GEN-LAST:event_jmiFormMateriasActionPerformed
 
     /**
      * @param args the command line arguments
