@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Uni.g1.Vistas;
+package Vistas;
 
 /**
  *

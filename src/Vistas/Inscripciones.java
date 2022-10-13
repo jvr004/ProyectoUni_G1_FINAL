@@ -89,11 +89,19 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 102));
         jLabel1.setText("Inscripcion");
 
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
         jLabel2.setText("ALUMNO");
 
+        jLabel3.setFont(new java.awt.Font("Felix Titling", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 153, 102));
         jLabel3.setText("LISTADO DE MATERIAS");
 
+        jSeparator2.setForeground(new java.awt.Color(0, 153, 102));
+
         Grupo.add(jrbInscripto);
+        jrbInscripto.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jrbInscripto.setForeground(new java.awt.Color(0, 153, 153));
         jrbInscripto.setText("Inscriptos");
         jrbInscripto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +110,8 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         });
 
         Grupo.add(jrbNoInscripto);
+        jrbNoInscripto.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jrbNoInscripto.setForeground(new java.awt.Color(0, 153, 153));
         jrbNoInscripto.setText("No Inscriptos");
         jrbNoInscripto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +119,8 @@ public class Inscripciones extends javax.swing.JInternalFrame {
             }
         });
 
+        jbInscripcion.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        jbInscripcion.setForeground(new java.awt.Color(0, 102, 51));
         jbInscripcion.setText("INSCRIBIR");
         jbInscripcion.setEnabled(false);
         jbInscripcion.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +129,8 @@ public class Inscripciones extends javax.swing.JInternalFrame {
             }
         });
 
+        jbAInscripcion.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        jbAInscripcion.setForeground(new java.awt.Color(0, 102, 51));
         jbAInscripcion.setText("ANULAR INSCRIPCION");
         jbAInscripcion.setEnabled(false);
         jbAInscripcion.addActionListener(new java.awt.event.ActionListener() {
@@ -125,6 +139,8 @@ public class Inscripciones extends javax.swing.JInternalFrame {
             }
         });
 
+        jbSalir.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        jbSalir.setForeground(new java.awt.Color(0, 102, 51));
         jbSalir.setText("SALIR");
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,17 +148,19 @@ public class Inscripciones extends javax.swing.JInternalFrame {
             }
         });
 
+        tMateria.setBackground(new java.awt.Color(0, 153, 153));
         tMateria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nombre", "Año"
             }
         ));
+        tMateria.setGridColor(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tMateria);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,42 +168,37 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(113, 113, 113)
-                                .addComponent(jLabel2)
-                                .addGap(41, 41, 41)
-                                .addComponent(jcbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(160, 160, 160)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jbInscripcion)
-                                .addGap(27, 27, 27)
-                                .addComponent(jbAInscripcion)
-                                .addGap(18, 18, 18)
-                                .addComponent(jbSalir))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addComponent(jrbInscripto)
-                                .addGap(90, 90, 90)
-                                .addComponent(jrbNoInscripto)))
-                        .addGap(0, 55, Short.MAX_VALUE)))
-                .addGap(19, 19, 19))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jbInscripcion)
+                        .addGap(27, 27, 27)
+                        .addComponent(jbAInscripcion)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbSalir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(41, 41, 41)
+                                .addComponent(jcbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jrbInscripto)
+                                .addGap(51, 51, 51)
+                                .addComponent(jrbNoInscripto))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jSeparator2)))))
+                .addGap(0, 9, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,15 +210,15 @@ public class Inscripciones extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jcbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jrbInscripto)
                     .addComponent(jrbNoInscripto))
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbAInscripcion)
                     .addComponent(jbInscripcion)
