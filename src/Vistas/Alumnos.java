@@ -328,6 +328,7 @@ public class Alumnos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         if(jtfLegajo.getText() != null){
             
+         int id=Integer.parseInt(jtfLegajo.getText());   
          int dni=Integer.parseInt(jtfDNI.getText());
          String apellido=jtfApellido.getText();
          String nombre=jtfNombre.getText();
@@ -335,9 +336,9 @@ public class Alumnos extends javax.swing.JInternalFrame {
          LocalDate fechaNacimiento = LocalDate.parse(fFecha.format(jdcFechaNac.getDate()), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
          boolean estado =jcbActivo.isEnabled();
             
-         Alumno alumno=new Alumno(dni,apellido,nombre,fechaNacimiento,estado);
+         Alumno alumno=new Alumno(id,dni,apellido,nombre,fechaNacimiento,estado);
          alumnoData.actualizaAlumno(alumno);
-         
+          
         }
         
     }//GEN-LAST:event_jbActualizarActionPerformed
