@@ -135,6 +135,11 @@ public class SeccionAlumno extends javax.swing.JFrame {
         jmiManNotas.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         jmiManNotas.setForeground(new java.awt.Color(0, 153, 153));
         jmiManNotas.setText("Manipulacion de Notas");
+        jmiManNotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiManNotasActionPerformed(evt);
+            }
+        });
         jmNotas.add(jmiManNotas);
 
         jMenuBar1.add(jmNotas);
@@ -146,6 +151,11 @@ public class SeccionAlumno extends javax.swing.JFrame {
         jmiListadoAxM.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         jmiListadoAxM.setForeground(new java.awt.Color(0, 153, 153));
         jmiListadoAxM.setText("Listado de Alumnos por Materias");
+        jmiListadoAxM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiListadoAxMActionPerformed(evt);
+            }
+        });
         jmConsultas.add(jmiListadoAxM);
 
         jMenuBar1.add(jmConsultas);
@@ -192,15 +202,33 @@ public class SeccionAlumno extends javax.swing.JFrame {
         escritorio.add(i);
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiManInscripcionesActionPerformed
-
+                                        
     private void jmiFormMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFormMateriasActionPerformed
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
         Materias mat = new Materias();
         mat.setVisible(true);
-        escritorio.add(mat);
+        escritorio.add(mat);      
     }//GEN-LAST:event_jmiFormMateriasActionPerformed
+
+    private void jmiManNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiManNotasActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        CargaNotas n = new CargaNotas();
+        n.setVisible(true);
+        escritorio.add(n);
+    }//GEN-LAST:event_jmiManNotasActionPerformed
+
+    private void jmiListadoAxMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListadoAxMActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        AlumnosMaterias alumXMat = new AlumnosMaterias();
+        alumXMat.setVisible(true);
+        escritorio.add(alumXMat);
+    }//GEN-LAST:event_jmiListadoAxMActionPerformed
 
     /**
      * @param args the command line arguments

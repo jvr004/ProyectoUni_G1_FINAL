@@ -137,6 +137,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Manipulacion de Notas"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiManNotasActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -161,6 +164,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Listado de Alumnos por Materias"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiListadoAxMActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
