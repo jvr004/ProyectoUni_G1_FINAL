@@ -77,7 +77,7 @@ public class AlumnoData {
     
     
     public Alumno obtenerAlumnoPorId(int idAlumno) {
-        String sql= "SELECT * FROM alumnos WHERE idAlumno = ?";
+        String sql= "SELECT * FROM alumnos WHERE estado = 1 AND idAlumno = ?";
         Alumno alu = new Alumno();
         try {
             PreparedStatement ps=con.prepareStatement(sql);
