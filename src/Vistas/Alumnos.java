@@ -116,14 +116,29 @@ public class Alumnos extends javax.swing.JInternalFrame {
         jbBorrar.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jbBorrar.setForeground(new java.awt.Color(0, 102, 51));
         jbBorrar.setText("BORRAR");
+        jbBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBorrarActionPerformed(evt);
+            }
+        });
 
         jbActualizar.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jbActualizar.setForeground(new java.awt.Color(0, 102, 51));
         jbActualizar.setText("ACTUALIZAR");
+        jbActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbActualizarActionPerformed(evt);
+            }
+        });
 
         jbLimpiar.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jbLimpiar.setForeground(new java.awt.Color(0, 102, 51));
         jbLimpiar.setText("LIMPIAR");
+        jbLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbLimpiarActionPerformed(evt);
+            }
+        });
 
         jSeparator1.setForeground(new java.awt.Color(0, 153, 102));
 
@@ -274,6 +289,43 @@ public class Alumnos extends javax.swing.JInternalFrame {
         alumnoData.guardarAlumno(alumno);
         jtfLegajo.setText(alumno.getIdAlumno()+"");
     }//GEN-LAST:event_jbGuardarActionPerformed
+
+    private void jbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBorrarActionPerformed
+        // TODO add your handling code here:
+        int idAlumno = Integer.parseInt(jtfLegajo.getText());
+        alumnoData.borrarAlumno(idAlumno);
+        
+    }//GEN-LAST:event_jbBorrarActionPerformed
+
+    private void jbActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActualizarActionPerformed
+        // TODO add your handling code here:
+        if(jtfLegajo.getText() != null){
+            
+         int dni=Integer.parseInt(jtfDNI.getText());
+         String apellido=jtfApellido.getText();
+         String nombre=jtfNombre.getText();
+         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
+         String fecha = formatoFecha.format(jdcFechaNac.getDate());
+         LocalDate fechaNacimiento = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+         boolean estado =jcbActivo.isEnabled();
+            
+         Alumno alumno=new Alumno(dni,apellido,nombre,fechaNacimiento,estado);
+         alumnoData.actualizaAlumno(alumno);
+         
+        }
+        
+    }//GEN-LAST:event_jbActualizarActionPerformed
+
+    private void jbLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimpiarActionPerformed
+        // TODO add your handling code here:
+        jtfLegajo.setText("");
+        jtfDNI.setText("");
+        jtfApellido.setText("");
+        jtfNombre.setText("");
+        jdcFechaNac.setDateFormatString("");
+        jcbActivo.setEnabled(false);
+              
+    }//GEN-LAST:event_jbLimpiarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

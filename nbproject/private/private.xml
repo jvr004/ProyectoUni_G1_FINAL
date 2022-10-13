@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/yamic/OneDrive/Documentos/NetBeansProjects/ProyectoUni_G1_FINAL/src/Uni/g1/Vistas/Alumnos.java</file>
-            <file>file:/C:/Users/yamic/OneDrive/Documentos/NetBeansProjects/ProyectoUni_G1_FINAL/src/Uni/g1/Controladora/AlumnoData.java</file>
-            <file>file:/C:/Users/yamic/OneDrive/Documentos/NetBeansProjects/ProyectoUni_G1_FINAL/src/Uni/g1/Vistas/Inscripciones.java</file>
-            <file>file:/C:/Users/yamic/OneDrive/Documentos/NetBeansProjects/ProyectoUni_G1_FINAL/src/Uni/g1/Controladora/CursadaData.java</file>
-            <file>file:/C:/Users/yamic/OneDrive/Documentos/NetBeansProjects/ProyectoUni_G1_FINAL/src/Uni/g1/Vistas/SeccionAlumno.java</file>
+            <file>file:/C:/Users/SANTI/Documents/ProyectoUni_G1_FINAL/src/Vistas/Materias.java</file>
+            <file>file:/C:/Users/SANTI/Documents/ProyectoUni_G1_FINAL/src/Vistas/SeccionAlumno.java</file>
+            <file>file:/C:/Users/SANTI/Documents/ProyectoUni_G1_FINAL/src/Vistas/Inscripciones.java</file>
+            <file>file:/C:/Users/SANTI/Documents/ProyectoUni_G1_FINAL/src/Vistas/Alumnos.java</file>
+            <file>file:/C:/Users/SANTI/Documents/ProyectoUni_G1_FINAL/src/Vistas/AlumnosMaterias.java</file>
+            <file>file:/C:/Users/SANTI/Documents/ProyectoUni_G1_FINAL/src/Vistas/CargaNotas.java</file>
         </group>
     </open-files>
 </project-private>
